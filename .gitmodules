@@ -1,0 +1,3 @@
+[submodule "lib/lemmingatize"]
+	path = lib/lemmingatize
+	url = git@github.com:lwolfsonkin/lemmingatize.git
