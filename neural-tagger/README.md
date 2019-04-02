@@ -21,13 +21,17 @@ python -u baselineTagger.py --treebank_path TREEBANK_DIR --langs lang --batch_si
 ```
 Substitute `TREEBANK_DIR` with the base directory of the task2 data,  `lang` with the name of the treebank, for e.g., `Afrikaans-AfriBooms` and `MODEL_DIRECTORY` with the location of the directory where the model should be written.
 
-We also provide code to perform jackknifing for eliminating exposure bias when training the lemmatizer.
-To generate the jackknifed training data, provide the additional argument `--jackknifing` and use cat_training_data.sh to create the combined training file.
+To run experiments for all treebanks in UD, simply run `./train_task2_models.sh`.
+
+We also provide code to perform jackknifing for eliminating exposure bias when training the lemmatizer. To generate the jackknifed training data, provide the additional argument `--jackknife` and the index of the fold with `--fold`.
 
 ```
-python -u baselineTagger.py --treebank_path TREEBANK_DIR --langs lang --batch_size 32 --model_type mono --model_path MODEL_DIRECTORY --jackknife
+python -u baselineTagger.py --treebank_path TREEBANK_DIR --langs lang --batch_size 32 --model_type mono --model_path MODEL_DIRECTORY --jackknife --fold [0..9]
 ```
-Alternatively, you may use scripts `scripts/gen_scripts_baseline.py` and `scripts/gen_scripts_baseline_jackknife.py` to run experiments for all languages.
+
+Alternatively, you may use the script `./train_task2_models_jackknifing.sh` to run jackknifing experiments for all languages.
+
+Finally, run `scripts/cat_training_data.sh TREEBANK_DIR JACKKNIFING_OUTPUT_DIR` to create the combined training file.
 
 ## Decoding with Pretrained Model
 
