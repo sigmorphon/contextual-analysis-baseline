@@ -1,3 +1,7 @@
 [submodule "lemming/lib/lemmingatize"]
 	path = lemming/lib/lemmingatize
 	url = git@github.com:lwolfsonkin/lemmingatize.git
+[submodule "neural-lemmatizer"]
+	path = neural-lemmatizer
+	url = git@github.com:sigmorphon/crosslingual-inflection-baseline.git
+	branch = task2
