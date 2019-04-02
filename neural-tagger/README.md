@@ -38,7 +38,7 @@ Finally, run `scripts/cat_training_data.sh TREEBANK_DIR JACKKNIFING_OUTPUT_DIR` 
 You can run evaluation with the argument `--test`. Please provide the argument `dev_set` with the argument `--test` to run evaluation on the development set. For example,
 
 ```
-python -u baselineTagger.py --treebank_path TREEBANK_DIR --langs lang --batch_size 32 --model_type mono --model_path MODEL_DIRECTORY --test
+python -u baselineTagger.py --treebank_path TREEBANK_DIR --langs lang --batch_size 32 --model_type mono --model_path MODEL_DIRECTORY --test dev_set
 ```
 
 ## Pretrained Models
